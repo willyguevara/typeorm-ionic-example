@@ -78,3 +78,31 @@ Since Ionic make a lot of optimizations while building for production, the follo
 @Column()
 birthdate: Date;
 ```
+
+### Problems building?
+
+Error:
+
+```bash
+Installing "cordova-sqlite-storage" for android
+Failed to install 'cordova-sqlite-storage': CordovaError: Using "requireCordovaModule" to load non-cordova module "q" is not supported. Instead, add this module to your dependencies and use regular "require" to load it.
+    at Context.requireCordovaModule (/Users/user/.nvm/versions/node/v14.4.0/lib/node_modules/cordova/node_modules/cordova-lib/src/hooks/Context.js:57:15)
+    at module.exports (/Users/user/Documents/Development/Cordova/typeorm-ionic-example/plugins/cordova-sqlite-storage/scripts/beforePluginInstall.js:13:21)
+    at runScriptViaModuleLoader (/Users/user/.nvm/versions/node/v14.4.0/lib/node_modules/cordova/node_modules/cordova-lib/src/hooks/HooksRunner.js:157:32)
+    at runScript (/Users/user/.nvm/versions/node/v14.4.0/lib/node_modules/cordova/node_modules/cordova-lib/src/hooks/HooksRunner.js:136:12)
+    at /Users/user/.nvm/versions/node/v14.4.0/lib/node_modules/cordova/node_modules/cordova-lib/src/hooks/HooksRunner.js:108:40
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+Using "requireCordovaModule" to load non-cordova module "q" is not supported. Instead, add this module to your dependencies and use regular "require" to load it.
+[ERROR] An error occurred while running subprocess cordova.
+        
+        cordova platform add android exited with exit code 1.
+        
+        Re-running this command with the --verbose flag may provide more
+        information.
+```
+
+try these steps:
+
+```bash
+ionic cordova platform rm ios; ionic cordova platform rm android; ionic cordova plugin rm cordova-sqlite-storage; npm i cordova-sqlite-storage@latest && ionic cordova plugin add cordova-sqlite-storage; ionic cordova platform add ios; ionic cordova platform add android
+```
