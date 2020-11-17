@@ -106,3 +106,6 @@ try these steps:
 ```bash
 ionic cordova platform rm ios; ionic cordova platform rm android; ionic cordova plugin rm cordova-sqlite-storage; npm i cordova-sqlite-storage@latest && ionic cordova plugin add cordova-sqlite-storage; ionic cordova platform add ios; ionic cordova platform add android
 ```
+#### net::ERR_CLEARTEXT_NOT_PERMITTED
+
+https://medium.com/@jorgekg3/how-enable-clear-text-traffic-on-android-9-ad56603fb17d
