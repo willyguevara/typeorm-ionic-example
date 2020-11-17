@@ -103,6 +103,14 @@ Using "requireCordovaModule" to load non-cordova module "q" is not supported. In
 
 try these steps:
 
+just android
+
+```bash
+ionic cordova platform rm android; ionic cordova plugin rm cordova-sqlite-storage; npm i cordova-sqlite-storage@latest && ionic cordova plugin add cordova-sqlite-storage; ionic cordova platform add android
+```
+try these steps:
+
+ios & android
 ```bash
 ionic cordova platform rm ios; ionic cordova platform rm android; ionic cordova plugin rm cordova-sqlite-storage; npm i cordova-sqlite-storage@latest && ionic cordova plugin add cordova-sqlite-storage; ionic cordova platform add ios; ionic cordova platform add android
 ```
